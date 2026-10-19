@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "settings": {
+    "conffile_policy": "keep-old",
+    "max_download_mb": 1024,
+    "min_rollout": 1.0
+  },
+  "apps": {
+    "okular": {
+      "id": "okular",
+      "display_name": "Okular",
+      "kind": "deb",
+      "packages": ["okular"],
+      "source": {"resolver": "apt", "approved_hosts": []},
+      "architectures": [],
+      "update_policy": "prefer-apt",
+      "allow_held_update": false,
+      "verification": {"status": "verified", "checked_on": "2026-10-18", "method": "Debian 13 main archive"},
+      "provenance": {
+        "registered_by": "catalog",
+        "catalog_verified_on": "2026-10-18",
+        "install_origin": "unknown",
+        "homepage_hint": "https://okular.kde.org",
+        "user_supplied": [],
+        "inferred": ["installed (dpkg database)"]
+      },
+      "added_at": "2026-10-18"
+    },
+    "obsidian": {
+      "id": "obsidian",
+      "display_name": "Obsidian",
+      "kind": "deb",
+      "packages": ["obsidian"],
+      "source": {
+        "resolver": "github-release",
+        "repo": "obsidianmd/obsidian-releases",
+        "asset_pattern": "obsidian_[0-9][0-9.]*_{arch}\\.deb",
+        "channel": "stable",
+        "approved_hosts": ["api.github.com", "github.com", "release-assets.githubusercontent.com",
+                           "objects.githubusercontent.com"],
+        "homepage": "https://obsidian.md/download"
+      },
+      "architectures": ["amd64"],
+      "update_policy": "prefer-apt",
+      "allow_held_update": false,
+      "identity": {"package": "obsidian", "architecture": "amd64", "verified_on": "2026-10-18"},
+      "verification": {
+        "status": "verified",
+        "checked_on": "2026-10-18",
+        "method": "obsidian.md/download links the .deb from GitHub obsidianmd/obsidian-releases.",
+        "integrity": "GitHub API asset SHA-256 digest (transfer integrity, not a publisher signature)."
+      },
+      "provenance": {
+        "registered_by": "catalog",
+        "catalog_verified_on": "2026-10-18",
+        "install_origin": "unknown",
+        "user_supplied": [],
+        "inferred": ["installed (dpkg database)"]
+      },
+      "added_at": "2026-10-18"
+    },
+    "proton-mail": {
+      "id": "proton-mail",
+      "display_name": "Proton Mail",
+      "kind": "deb",
+      "packages": ["proton-mail"],
+      "source": {
+        "resolver": "vendor-json",
+        "format": "proton-version-json",
+        "channel": "Stable",
+        "url": "https://proton.me/download/mail/linux/version.json",
+        "approved_hosts": ["proton.me"],
+        "homepage": "https://proton.me/mail/download"
+      },
+      "architectures": ["amd64"],
+      "update_policy": "prefer-apt",
+      "allow_held_update": false,
+      "verification": {"status": "verified", "checked_on": "2026-10-18",
+                       "method": "Manifest URL from Proton's official desktop app source.",
+                       "integrity": "SHA-512 checksum published in the vendor manifest."},
+      "provenance": {"registered_by": "catalog", "install_origin": "unknown", "user_supplied": [], "inferred": []},
+      "added_at": "2026-10-18"
+    },
+    "example-tool": {
+      "id": "example-tool",
+      "display_name": "Example Tool (registered with: wardctl add --url ...)",
+      "kind": "deb",
+      "packages": ["example-tool"],
+      "source": {
+        "resolver": "direct-deb",
+        "url": "https://downloads.vendor.example/linux/latest/example-tool_amd64.deb",
+        "pinned": false,
+        "approved_hosts": ["downloads.vendor.example", "cdn.vendor.example"]
+      },
+      "architectures": ["amd64"],
+      "update_policy": "prefer-apt",
+      "allow_held_update": false,
+      "identity": {"package": "example-tool", "architecture": "amd64", "verified_on": "2026-10-18"},
+      "verification": {"status": "user-supplied", "checked_on": "2026-10-18",
+                       "method": "source supplied by the user; package identity read from its control data"},
+      "provenance": {
+        "registered_by": "user",
+        "install_origin": "unknown",
+        "user_supplied": ["source.url", "source.approved_hosts"],
+        "inferred": ["identity (from package control data)"]
+      },
+      "added_at": "2026-10-18"
+    },
+    "discord": {
+      "id": "discord",
+      "display_name": "Discord",
+      "kind": "flatpak",
+      "packages": [],
+      "flatpak": {"app_id": "com.discordapp.Discord", "installation": "user"},
+      "source": {"resolver": "none", "approved_hosts": []},
+      "architectures": ["amd64"],
+      "update_policy": "prefer-apt",
+      "allow_held_update": false,
+      "verification": {"status": "verified", "checked_on": "2026-10-18",
+                       "method": "Existing user Flatpak, updated with flatpak as the invoking user."},
+      "provenance": {"registered_by": "catalog", "install_origin": "unknown", "user_supplied": [],
+                     "inferred": ["installed (detected on disk)"]},
+      "added_at": "2026-10-18"
+    }
+  }
+}
